@@ -4,21 +4,41 @@
 	"name": "Video-Platform",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
+	// "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"mongodb.mongodb-vscode"
+				"mongodb.mongodb-vscode",
+				"github.vscode-github-actions",
+				"GitHub.copilot",
+				"eamodio.gitlens",
+				"esbenp.prettier-vscode",
+				"bradlc.vscode-tailwindcss",
+				"fabiospampinato.vscode-todo-plus",
+				"wayou.vscode-todo-highlight"
 			]
 		}
-	}
+	},
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/ansible:2": {},
+		"ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {},
+		"ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
+		"ghcr.io/devcontainers-contrib/features/ffmpeg-apt-get:1": {},
+		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
+		"ghcr.io/codeman99/features/circleci-cli:1": {},
+		"ghcr.io/devcontainers-community/npm-features/prettier:1": {},
+		"ghcr.io/devcontainers-community/npm-features/typescript:1": {},
+		"ghcr.io/itsmechlark/features/redis-server:1": {}
+	},
+	"mounts": [
+		"source=/home/niklaus/Full-Stack/Video-Platform,target=/workspaces/Video-Platform,type=bind"
+	  ],
+	"workspaceFolder": "/workspaces/Video-Platform"
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [3000, 27017],
